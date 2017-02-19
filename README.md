@@ -191,6 +191,55 @@ module.exports = {
 * chunksSortMode: 允许控制块在添加到页面之前的排序方式，支持的值：'none' | 'default' | {function}-default:'auto'</br>
 * excludeChunks: 允许跳过某些块，(比如，跳过单元测试的块) </br>
 #改造webpack.prod.conf.js
-同样先引入get-pages-path.js，然后将配置
+同样先引入get-pages-path.js，然后将配置中引入html-webpack-plugin插件的部分删除，即删除
+```javascript
+new HtmlWebpackPlugin({
+      filename: process.env.NODE_ENV === 'testing'
+        ? 'index.html'
+        : config.build.index,
+      template: 'index.html',
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+        // more options:
+        // https://github.com/kangax/html-minifier#options-quick-reference
+      },
+      // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+      chunksSortMode: 'dependency'
+    })
+```
+然后加入如下代码：
 ```javascript
 ...
+var getPagesPath = require('./get-pages-path');
+var pages = getPagesPath.getEntries('./src/module/**/*.html');
+var webpackConfig = merge(baseWebpackConfig, {
+...
+for(var page in pages) {
+  // 配置生成的html文件，定义路径等
+  var conf = {
+    filename: page + '.html',
+    template: pages[page], //模板路径
+    inject: true,
+    minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeAttributeQuotes: true
+          // more options:
+          // https://github.com/kangax/html-minifier#options-quick-reference
+        },
+    // excludeChunks 允许跳过某些chunks, 而chunks告诉插件要引用entry里面的哪几个入口
+    // 如何更好的理解这块呢？举个例子：比如本demo中包含两个模块（index和about），最好的当然是各个模块引入自己所需的js，
+    // 而不是每个页面都引入所有的js，你可以把下面这个excludeChunks去掉，然后npm run build，然后看编译出来的index.html和about.html就知道了
+    // filter：将数据过滤，然后返回符合要求的数据，Object.keys是获取JSON对象中的每个key
+    excludeChunks: Object.keys(pages).filter(function(item) {
+      return (item != page)
+    })
+  };
+  // 需要生成几个html文件，就配置几个HtmlWebpackPlugin对象
+  webpackConfig.plugins.push(new HtmlWebpackPlugin(conf))
+}
+```
+`注：同样改造webpack.dev.conf.js就可以进行开发调试了`
