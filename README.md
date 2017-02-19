@@ -133,10 +133,7 @@ resolve.extensions详细说明：</br>
 ```javascript
 var webpack = require('webpack');
 module.exports = {
-    entry: [
-        'webpack/hot/only-dev-server',
-        './js/app.js'
-    ],
+    entry:  './js/app.js',
     output: {
         path: './build',
         filename: 'bundle.js'
