@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var glob = require('glob');
 
 exports.getEntries = function (globPath) {
-  var entries = {}
+  var entries = {};
   /**
    * 读取src目录,并进行路径裁剪
    */
@@ -13,7 +13,7 @@ exports.getEntries = function (globPath) {
      * path.basename 提取出用 ‘/' 隔开的path的最后一部分，除第一个参数外其余是需要过滤的字符串
      * path.extname 获取文件后缀
      */
-    var basename = path.basename(entry, path.extname(entry), 'router.js') // 过滤router.js
+    var basename = path.basename(entry, path.extname(entry), 'router.js'); // 过滤router.js
     // ***************begin***************
     // 当然， 你也可以加上模块名称, 即输出如下： { module/main: './src/module/index/main.js', module/test: './src/module/test/test.js' }
     // 最终编译输出的文件也在module目录下， 访问路径需要时 localhost:8080/module/index.html
@@ -28,7 +28,7 @@ exports.getEntries = function (globPath) {
 // console.log(entries);
 // 获取的主入口如下： { main: './src/module/index/main.js', test: './src/module/test/test.js' }
   return entries;
-}
+};
 
 exports.assetsPath = function (_path) {
   var assetsSubDirectory = process.env.NODE_ENV === 'production'
