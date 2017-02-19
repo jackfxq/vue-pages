@@ -190,6 +190,7 @@ module.exports = {
 * chunks: 允许只添加某些块 (比如，仅仅 unit test 块)</br>
 * chunksSortMode: 允许控制块在添加到页面之前的排序方式，支持的值：'none' | 'default' | {function}-default:'auto'</br>
 * excludeChunks: 允许跳过某些块，(比如，跳过单元测试的块) </br>
+
 #改造webpack.prod.conf.js
 
 同样先引入get-pages-path.js，然后将配置中引入html-webpack-plugin插件的部分删除，即删除
