@@ -17,7 +17,7 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
+vue的多页开发网上有很多的分析，本文在对这些分析进行总结和细化，如果你对前面的内容熟悉你可以直接跳过，直接查看[改造vue-cli多页运用](#改造vue-cli多页运用)。
 # glob模块
 采用node的glob模块匹配路径，基本的匹配规则如下：
 * `*` 匹配任意数量的字符，但`不匹配/`
@@ -193,7 +193,7 @@ module.exports = {
 
 #改造webpack.prod.conf.js
 
-同样先引入get-pages-path.js，然后将配置中引入html-webpack-plugin插件的部分删除，即删除
+同样先引入get-pages-path.js，然后将配置中引入html-webpack-plugin插件的部分删除，即删除如下代码
 ```javascript
 new HtmlWebpackPlugin({
       filename: process.env.NODE_ENV === 'testing'
@@ -245,3 +245,4 @@ for(var page in pages) {
 }
 ```
 `注：同样改造webpack.dev.conf.js就可以进行开发调试了`
+至此，我们的vue多页运用就改造完成啦
