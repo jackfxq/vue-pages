@@ -244,5 +244,5 @@ for(var page in pages) {
   webpackConfig.plugins.push(new HtmlWebpackPlugin(conf))
 }
 ```
-`注：同样改造webpack.dev.conf.js就可以进行开发调试了`
+`注：同样改造webpack.dev.conf.js就可以进行开发调试了`</br>
 至此，我们的vue多页运用就改造完成啦
