@@ -129,8 +129,34 @@ resolve.extensions详细说明：</br>
 ```javascript
 　　　　"start-html":"webpack --config webpack.html.config.js"
 ```
-　　　　在命令行中输入npm run start-html查找的就是webpack.html.config.js，通过这种方式可以实现不同的配置文件有不同的用处，这样就不用反复修改同一个配置文件
-
+　　　　在命令行中输入npm run start-html查找的就是webpack.html.config.js，通过这种方式可以实现不同的配置文件有不同的用处，这样就不用反复修改同一个配置文件,一个简单的配置文件事例如下：
+```javascript
+var webpack = require('webpack');
+module.exports = {
+    entry: [
+        'webpack/hot/only-dev-server',
+        './js/app.js'
+    ],
+    output: {
+        path: './build',
+        filename: 'bundle.js'
+    },
+    module: {
+        loaders: [
+        { test: /\.js?$/, loaders: ['react-hot', 'babel'], exclude:     /node_modules/ },
+        { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+        { test: /\.css$/, loader: "style!css" },
+        {test: /\.less/,loader: 'style-loader!css-loader!less-loader'}
+        ]
+    },
+    resolve:{
+        extensions:['','.js','.json']
+    },
+    plugins: [
+        new webpack.NoErrorsPlugin()
+    ]
+};
+```
 #改造vue-cli多页运用
 好了说了这么多，开始进行多页运用的改造吧，首先我在build目录下创建了一个获取pages下所有目录中文件路径的js，我们叫get-pages-path.js，代码如下：
 ```javascript
