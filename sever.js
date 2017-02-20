@@ -7,7 +7,7 @@ var app = express();
 var port = process.env.PORT || 3000;  //监听的端口
 app.use(express.static(__dirname + '/dist'));
 app.use(function (req , res){
-    res.sendfile('./dist/test.html')
+    res.sendfile('./dist/page1.html')
 });
 app.listen(port,function(){
     console.log('TechNode is on port' + port + '!' )

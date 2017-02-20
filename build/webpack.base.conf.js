@@ -6,12 +6,14 @@ var vueLoaderConfig = require('./vue-loader.conf')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
-
+var getPagesPath = require('./get-pages-path');
+console.log(getPagesPath.getEntries('./src/pages/**/*.js'));
+console.log(config.build.assetsRoot);
 module.exports = {
   // entry: {
   //   app: './src/main.js'
   // },
-  entry: utils.getEntries('./src/module/**/*.js'),
+  entry: getPagesPath.getEntries('./src/pages/**/*.js'),
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -59,7 +61,11 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.less$/,
+        loader: 'style-loader!css-loader!less-loader'
       }
     ]
   }
-}
+};

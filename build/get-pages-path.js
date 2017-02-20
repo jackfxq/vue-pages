@@ -2,8 +2,9 @@
  * Created by zhengyanyun on 17/2/19.
  */
 var glob = require('glob');
+var path = require('path');
 
-exports.getPagesPath = function (globPath) {
+exports.getEntries = function (globPath) {
     var entries = {};
     /**
      * 读取src目录,并进行路径裁剪
@@ -18,12 +19,13 @@ exports.getPagesPath = function (globPath) {
         // 当然， 你也可以加上模块名称, 即输出如下： { module/main: './src/module/index/main.js', module/test: './src/module/test/test.js' }
         // 最终编译输出的文件也在module目录下， 访问路径需要时 localhost:8080/module/index.html
         // slice 从已有的数组中返回选定的元素, -3 倒序选择，即选择最后三个
-        // var tmp = entry.split('/').splice(-3)
-        // var pathname = tmp.splice(0, 1) + '/' + basename; // splice(0, 1)取tmp数组中第一个元素
-        // console.log(pathname)
-        // entries[pathname] = entry
+        var tmp = entry.split('/').splice(-3);
+        // console.log(tmp);
+        var pathname = tmp[0] + '/' + tmp[1]; // splice(0, 1)取tmp数组中第一个元素
+        // console.log(pathname);
+        entries[pathname] = entry;
         // ***************end***************
-        entries[basename] = entry
+        // entries[basename] = entry
     });
 // console.log(entries);
 // 获取的主入口如下： { main: './src/module/index/main.js', test: './src/module/test/test.js' }

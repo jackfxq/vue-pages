@@ -7,9 +7,10 @@ var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var env = config.build.env;
-
-var pages = utils.getEntries('./src/module/**/*.html');
-
+var getPagesPath = require('./get-pages-path');
+var pages = getPagesPath.getEntries('./src/pages/**/*.html');
+var pagesJs = getPagesPath.getEntries('./src/pages/**/*.js');
+console.log(pages);
 
 var webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -79,19 +80,23 @@ var webpackConfig = merge(baseWebpackConfig, {
   ]
 });
 
+console.log(utils.assetsPath('css/[name].[contenthash].css'));
+
 for(var page in pages) {
   // 配置生成的html文件，定义路径等
+  var arry = [];
+  arry[0] = page;
   var conf = {
     filename: page + '.html',
     template: pages[page], //模板路径
     inject: true,
-    minify: {
-          removeComments: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true
-          // more options:
-          // https://github.com/kangax/html-minifier#options-quick-reference
-        },
+    // minify: {
+    //       removeComments: true,
+    //       collapseWhitespace: true,
+    //       removeAttributeQuotes: true
+    //       // more options:
+    //       // https://github.com/kangax/html-minifier#options-quick-reference
+    //     },
     // excludeChunks 允许跳过某些chunks, 而chunks告诉插件要引用entry里面的哪几个入口
     // 如何更好的理解这块呢？举个例子：比如本demo中包含两个模块（index和about），最好的当然是各个模块引入自己所需的js，
     // 而不是每个页面都引入所有的js，你可以把下面这个excludeChunks去掉，然后npm run build，然后看编译出来的index.html和about.html就知道了
@@ -100,6 +105,9 @@ for(var page in pages) {
       return (item != page)
     })
   };
+  console.log(Object.keys(pages).filter(function(item) {
+    return (item != page)
+  }));
   // 需要生成几个html文件，就配置几个HtmlWebpackPlugin对象
   webpackConfig.plugins.push(new HtmlWebpackPlugin(conf))
 }
