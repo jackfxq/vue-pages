@@ -37,8 +37,8 @@ ps：这里只是列了js版本的glob模式的一些常用语法。</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |---index.js</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |---App.vue</br>
 &nbsp;&nbsp;&nbsp;&nbsp; |---page2</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |---detail.html</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |---detail.js</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |---index.html</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |---index.js</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |---App.vue</br>
 
 所有的页面都在pages目录下，因此在使用glob模块遍历pages下目录的js文件时，其代码如下：
