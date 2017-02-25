@@ -7,8 +7,8 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 var getPagesPath = require('./get-pages-path');
-console.log(getPagesPath.getEntries('./src/pages/**/*.js'));
-console.log(config.build.assetsRoot);
+// console.log(getPagesPath.getEntries('./src/pages/**/*.js'));
+// console.log(process.env.NODE_ENV);
 module.exports = {
   // entry: {
   //   app: './src/main.js'

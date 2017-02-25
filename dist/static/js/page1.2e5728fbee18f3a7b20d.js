@@ -1,4 +1,4 @@
-webpackJsonp([1,4],[
+webpackJsonp([2,4],[
 /* 0 */,
 /* 1 */,
 /* 2 */
@@ -132,9 +132,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 7 */,
-/* 8 */,
-/* 9 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -143,9 +141,9 @@ __webpack_require__(17)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(12),
+  __webpack_require__(10),
   /* template */
-  __webpack_require__(22),
+  __webpack_require__(20),
   /* scopeId */
   null,
   /* cssModules */
@@ -156,17 +154,15 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 10 */,
-/* 11 */,
-/* 12 */
+/* 8 */,
+/* 9 */,
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_css__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Hello__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Hello___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Hello__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Hello__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Hello___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Hello__);
 //
 //
 //
@@ -177,25 +173,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
+//import './index.less'
 
 
 /* harmony default export */ __webpack_exports__["default"] = {
   name: 'app',
   components: {
-    Hello: __WEBPACK_IMPORTED_MODULE_1__components_Hello___default.a
+    Hello: __WEBPACK_IMPORTED_MODULE_0__components_Hello___default.a
   }
 };
 
 /***/ }),
+/* 11 */,
+/* 12 */,
 /* 13 */,
 /* 14 */,
 /* 15 */,
-/* 16 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
+/* 16 */,
 /* 17 */
 /***/ (function(module, exports) {
 
@@ -204,9 +198,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ }),
 /* 18 */,
 /* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -218,24 +210,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "src": __webpack_require__(4)
     }
-  }), _vm._v(" "), _c('hello'), _vm._v(" "), _c('h3', [_vm._v("i am page3")])], 1)
+  }), _vm._v(" "), _c('hello'), _vm._v(" "), _c('div', {
+    staticClass: "test"
+  }, [_vm._v("page1")])], 1)
 },staticRenderFns: []}
 
 /***/ }),
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */
+/* 21 */,
+/* 22 */,
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__App__);
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
@@ -250,5 +240,5 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 });
 
 /***/ })
-],[29]);
-//# sourceMappingURL=page3.e9f2c0bf3c68aaa967f1.js.map
+],[23]);
+//# sourceMappingURL=page1.2e5728fbee18f3a7b20d.js.map

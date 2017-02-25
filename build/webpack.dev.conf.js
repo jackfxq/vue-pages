@@ -5,8 +5,8 @@ var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
-var pages = utils.getEntries('./src/module/**/*.html');
-
+var getPagesPath = require('./get-pages-path');
+var pages = getPagesPath.getEntries('./src/pages/**/*.html');
 
 
 // add hot-reload related code to entry chunks
@@ -14,7 +14,7 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
 })
 
-module.exports = merge(baseWebpackConfig, {
+var devConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
   },
@@ -30,7 +30,7 @@ module.exports = merge(baseWebpackConfig, {
     // https://github.com/ampedandwired/html-webpack-plugin
     new FriendlyErrorsPlugin()
   ]
-})
+});
 for(var page in pages) {
   // 配置生成的html文件，定义路径等
   var conf = {
@@ -46,5 +46,7 @@ for(var page in pages) {
     })
   };
   // 需要生成几个html文件，就配置几个HtmlWebpackPlugin对象
-  module.exports.plugins.push(new HtmlWebpackPlugin(conf))
+  devConfig.plugins.push(new HtmlWebpackPlugin(conf))
 }
+
+module.exports = devConfig;
