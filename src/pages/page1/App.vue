@@ -8,7 +8,7 @@
 
 <script>
 
-//import './index.less'
+import './index.less'
 import Hello from '../../components/Hello'
 
 export default {

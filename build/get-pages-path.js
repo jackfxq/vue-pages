@@ -19,7 +19,7 @@ exports.getEntries = function (globPath) {
         // slice 从已有的数组中返回选定的元素, -3 倒序选择，即选择最后三个
         var tmp = entry.split('/').splice(-3);
         // console.log(tmp);
-        var pathname =  tmp[1]; // 获取前两个元素
+        var pathname = tmp[0] + '/' + tmp[1]; // 获取前两个元素
         //输出结果如:{ 'pages/page1': './src/pages/page1/index.js','pages/page2': './src/pages/page2/index.js','pages/page3': './src/pages/page3/index.js' }
         // console.log(pathname);
         entries[pathname] = entry;

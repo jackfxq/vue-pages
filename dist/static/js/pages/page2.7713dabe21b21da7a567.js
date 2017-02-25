@@ -1,4 +1,4 @@
-webpackJsonp([2,4],[
+webpackJsonp([1,4],[
 /* 0 */,
 /* 1 */,
 /* 2 */
@@ -132,7 +132,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 7 */
+/* 7 */,
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -141,7 +142,7 @@ __webpack_require__(17)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(10),
+  __webpack_require__(11),
   /* template */
   __webpack_require__(20),
   /* scopeId */
@@ -154,15 +155,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 8 */,
 /* 9 */,
-/* 10 */
+/* 10 */,
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Hello__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Hello___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Hello__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_css__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Hello__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Hello___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Hello__);
 //
 //
 //
@@ -173,20 +176,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-//import './index.less'
 
 
 /* harmony default export */ __webpack_exports__["default"] = {
   name: 'app',
   components: {
-    Hello: __WEBPACK_IMPORTED_MODULE_0__components_Hello___default.a
+    Hello: __WEBPACK_IMPORTED_MODULE_1__components_Hello___default.a
   }
 };
 
 /***/ }),
-/* 11 */,
 /* 12 */,
-/* 13 */,
+/* 13 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
 /* 14 */,
 /* 15 */,
 /* 16 */,
@@ -210,22 +216,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "src": __webpack_require__(4)
     }
-  }), _vm._v(" "), _c('hello'), _vm._v(" "), _c('div', {
-    staticClass: "test"
-  }, [_vm._v("page1")])], 1)
+  }), _vm._v(" "), _c('hello'), _vm._v(" "), _c('h3', [_vm._v("i am page2")])], 1)
 },staticRenderFns: []}
 
 /***/ }),
 /* 21 */,
 /* 22 */,
-/* 23 */
+/* 23 */,
+/* 24 */,
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__App__);
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
@@ -240,5 +246,5 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 });
 
 /***/ })
-],[23]);
-//# sourceMappingURL=page1.2e5728fbee18f3a7b20d.js.map
+],[25]);
+//# sourceMappingURL=page2.7713dabe21b21da7a567.js.map
